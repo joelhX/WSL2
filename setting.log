@@ -1,0 +1,7 @@
+#ADD new User #sambausername# to #gruopname#
+adduser --no-create-home --disabled-password --disabled-login #sambausername#
+usermod -a -G #gruopname# #sambausername#
+smbpasswd -a #sambausername#
+
+#SET Password Expiration Date 30days
+pdbedit -P "maximum password age" -C 2595000
